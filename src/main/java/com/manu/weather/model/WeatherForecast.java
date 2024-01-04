@@ -1,6 +1,7 @@
 package com.manu.weather.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class WeatherForecast {
@@ -24,7 +25,7 @@ public class WeatherForecast {
         this.city = city;
     }
 
-    public static class ForecastItem{
+    public static class ForecastItem {
         private long dt;
         private Main main;
         private List<Weather> weather;
@@ -109,7 +110,7 @@ public class WeatherForecast {
         }
     }
 
-    public static class Weather{
+    public static class Weather {
         private int id;
         private String main;
         private String description;
@@ -147,7 +148,8 @@ public class WeatherForecast {
             this.icon = icon;
         }
     }
-    public static class Main{
+
+    public static class Main {
         private double temp;
         @JsonProperty("feels_like")
         private double feelsLike;
@@ -237,7 +239,7 @@ public class WeatherForecast {
         }
     }
 
-    public static class Clouds{
+    public static class Clouds {
         private int all;
 
         public int getAll() {
@@ -248,7 +250,8 @@ public class WeatherForecast {
             this.all = all;
         }
     }
-    public static class Wind{
+
+    public static class Wind {
         private double speed;
         private int deg;
         private double gust;
@@ -278,7 +281,7 @@ public class WeatherForecast {
         }
     }
 
-    public static class Sys{
+    public static class Sys {
         private String pod;
 
         public String getPod() {
@@ -290,10 +293,10 @@ public class WeatherForecast {
         }
     }
 
-    public static class City{
+    public static class City {
         private int id;
         private String name;
-        private  Coord coord;
+        private Coord coord;
         private String country;
 
         private int population;
@@ -366,7 +369,7 @@ public class WeatherForecast {
         }
     }
 
-    public static class Coord{
+    public static class Coord {
         private double lat;
         private double lon;
 

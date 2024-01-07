@@ -30,30 +30,30 @@
                     </div>
                 </form>
 
-                <div class="card shadow-0 border">
-                    <div class="card-body p-4" th:each="forecastItem : ${forecast.list}">
+                <div class="card shadow-0 border" th:if="${not isError}">
+                    <div class="card-body p-4" th:each="forecastItem : ${forecast.weatherForecast.list}">
                         <h4 class="mb-1 sfw-normal">
-                            <span th:text="${forecast.city.name}" class="text-uppercase"></span>
+                            <span th:text="${forecast.weatherForecast.city.name}" class="text-uppercase"></span>
                             ,&nbsp;
-                            <span th:text="${forecast.city.country}"> US</span>
+                            <span th:text="${forecast.weatherForecast.city.country}"></span>
                         </h4>
                         <p class="mb-2">Current temperature:
                             <span class="fw-bold">
-                                <span th:text="${temp}" class="fw-bold"></span>°C
+                                <span th:text="${forecast.temp}" class="fw-bold"></span>°C
                             </span>
                         </p>
                         <p>Feels like:
                             <span class="fw-bold">
-                                <span th:text="${feelsLikeTemp}"></span>°C
+                                <span th:text="${forecast.feelsLikeTemp}"></span>°C
                             </span>
                         </p>
                         <p>Max:
                             <span class="fw-bold">
-                                <span th:text="${maxTemp}"></span>°C,
+                                <span th:text="${forecast.maxTemp}"></span>°C,
                             </span>
                             Min:
                             <span class="fw-bold">
-                                <span th:text="${minTemp}"></span>°C
+                                <span th:text="${forecast.minTemp}"></span>°C
                             </span>
                         </p>
                         <p>
@@ -69,6 +69,12 @@
                             <span th:text="${forecastItem.wind.speed}"></span>km/h
                             </span>
                         </p>
+                    </div>
+                </div>
+
+                <div class="card shadow-0 border" th:if="${isError}">
+                    <div class="card-body p-4">
+                        <p th:text="${error}" class="fw-bold text-uppercase"> </p>
                     </div>
                 </div>
             </div>

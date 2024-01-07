@@ -1,7 +1,6 @@
 package com.manu.weather.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public class WeatherForecast {

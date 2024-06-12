@@ -13,7 +13,4 @@ This is a Spring Boot application that provides weather forecasts using the Open
 - [Java](https://www.oracle.com/java/technologies/javase-downloads.html) (version 8 or higher)
 - [Maven](https://maven.apache.org/download.cgi)
 
-## Demo
-    https://weather-m19.up.railway.app/weather/forecast
-
 ![img.png](img.png)
